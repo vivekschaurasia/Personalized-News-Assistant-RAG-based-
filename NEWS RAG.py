@@ -12,7 +12,7 @@ content = []
 query = input(str("What  news do you wanna know? "))
 
 def get_latest_news(query):
-    api_key = "2d86f668ccd6413a9ea441e5a8b12e14"  # Replace with your API key
+    api_key = "API key"  # Replace with your API key
     url = f"https://newsapi.org/v2/everything?q={query}&pageSize=100&sortBy=publishedAt&apiKey={api_key}"
     #url = f"https://www.nbcnews.com/search/?q=israel
     response = requests.get(url)
@@ -115,7 +115,7 @@ if not os.path.exists(persistent_directory):
     # Create embeddings
     print("\n--- Creating embeddings ---")
     embeddings = OpenAIEmbeddings(
-        model="text-embedding-3-small", api_key = "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")  # Update to a valid embedding model if needed
+        model="text-embedding-3-small", api_key = "API key")  # Update to a valid embedding model if needed
     print("\n--- Finished creating embeddings ---")
 
     # Create the vector store and persist it automatically
