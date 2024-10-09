@@ -20,4 +20,4 @@ The Personalized News Assistant is an AI-driven application that leverages Retri
 * Environment Management: dotenv for API key management
 * Version Control: Git
 
-
+#Remove and put your own api keys
