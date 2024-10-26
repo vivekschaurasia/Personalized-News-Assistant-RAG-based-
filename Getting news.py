@@ -1,7 +1,5 @@
 #Getting the 100 News with Google News library
-
 from GoogleNews import GoogleNews
-
 
 
 from GoogleNews import GoogleNews
@@ -63,27 +61,22 @@ from bs4 import BeautifulSoup
 import time
 import random
 
-# Initialize an empty list to store the descriptions
 description = []
 
 
-# Loop through each link in latest_link
 for i in latest_link:
-    url = i
 
     try:
-        # Send GET request with headers and a timeout to avoid hanging
-        response = requests.get(url, timeout=10)
+        response = requests.get(i, timeout=10)
 
         # Check if the request was successful
         if response.status_code == 200:
             html_content = response.text
         else:
-            print(f"Failed to retrieve: {url} (Status code: {response.status_code})")
+            print(f"Failed to retrieve: {i} (Status code: {response.status_code})")
             description.append("Failed to retrieve the webpage.")
             continue  # Skip to the next link
 
-        # Parse the HTML content with BeautifulSoup
         soup = BeautifulSoup(html_content, "html.parser")
         paragraphs = soup.find_all("p")
 
@@ -92,42 +85,17 @@ for i in latest_link:
         description.append(page_description)
 
     except requests.exceptions.RequestException as e:
-        print(f"Error retrieving {url}: {e}")
+        print(f"Error retrieving {i}: {e}")
         description.append("Failed to retrieve the webpage.")
-        continue  # Ensure it moves to the next link even if an error occurs
-
+        continue  
     # Introduce a random delay to prevent rate-limiting
     time.sleep(random.uniform(1, 3))
 
-# Print the final list of descriptions
+
 print(description)
 
 data["description"] = description
 
-
-"""
-from tqdm import tqdm
-import requests
-from bs4 import BeautifulSoup
-
-description = []
-for i in tqdm(latest_link):
-  url = i
-  response = requests.get(url)
-
-  if response.status_code == 200:
-    html_content = response.text
-  else:
-    print("Failed to retrieve the webpage.")
-    description.append("Failed to retrieve the webpage.")
-    continue
-  
-  soup = BeautifulSoup(html_content, "html.parser")
-  paragraphs = soup.find_all("p")
-  for paragraph in paragraphs:
-    description.append(paragraph.get_text())
-
-"""
 
 
 """
@@ -139,8 +107,7 @@ DataFrame to TEXT file
 import pandas as pd
 import os
 
-# Assuming 'data' is your DataFrame
-# Create the 'NEWS_data' directory if it doesn't exist
+
 folder_name = "NEWS_data"
 os.makedirs(folder_name, exist_ok=True)
 
@@ -148,13 +115,11 @@ os.makedirs(folder_name, exist_ok=True)
 for index, row in data.iterrows():
     description = row['description']
     
-    # Create a filename for each text file
+
     filename = f"description_{index + 1}.txt"
-    
-    # Full path where the text file will be saved
+   
     file_path = os.path.join(folder_name, filename)
     
-    # Write the description to the text file
     with open(file_path, "w", encoding="utf-8") as f:
         f.write(description)
 
