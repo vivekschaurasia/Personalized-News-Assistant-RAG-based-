@@ -1,5 +1,6 @@
 # Personalized News Assistant (RAG-based)
 
+# Add Blog and edit the code soon
 
 ## Overview
 The Personalized News Assistant is an AI-driven application that leverages Retrieval-Augmented Generation (RAG) and NLP technologies to retrieve and summarize real-time news articles. It integrates multiple APIs to ensure that users receive personalized, up-to-date news based on their queries. The system is also equipped with a question-answering feature to clarify specific details from the articles, making it a versatile tool for staying informed.
