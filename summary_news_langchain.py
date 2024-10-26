@@ -2,8 +2,8 @@
 
 import os
 
-# Path to the folder containing your news text files
-folder_path = "C:/Users/vivek/OneDrive/Desktop/langchain/news_data"
+
+folder_path = " Path to the folder containing your news text files "
 
 # Read all text files and store them in a list
 documents = []
@@ -27,9 +27,9 @@ from langchain.text_splitter import CharacterTextSplitter
 
 # Initialize the text splitter
 text_splitter = CharacterTextSplitter(
-    separator="\n",       # Split on newlines or any other delimiter
-    chunk_size=1000,       # Maximum size of each chunk in characters
-    chunk_overlap=200      # Overlap between chunks to maintain context
+    separator="\n",       
+    chunk_size=1000,      
+    chunk_overlap=200     
 )
 
 all_chunks = []
@@ -39,39 +39,27 @@ for i in news_documents:
 
 
 
-"""
-
-# Check if vector store contains entries; avoid re-adding on re-runs
-if len(all_chunks) > 0:
-    ids = [f"doc_{i}" for i in range(len(all_chunks))]
-    db.add_texts(all_chunks, ids=ids)
-    print(f"Added {len(all_chunks)} new documents.")
-"""
-
-
-
 
 """ Generate Embeddings for News Documents """
 
 # Define the embedding model
 from langchain_openai import OpenAIEmbeddings
 
-embeddings = OpenAIEmbeddings(model="text-embedding-3-small" , api_key = "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")
+embeddings = OpenAIEmbeddings(model="text-embedding-3-small" , api_key = "Your_API_Key")
 
 # Load the existing vector store with the embedding function
 from langchain_chroma import Chroma
 
-db = Chroma(persist_directory="C:/Users/vivek/OneDrive/Desktop/langchain/db/chroma_db",
+db = Chroma(persist_directory="Directory of your folder cointaing Chroma db",
             embedding_function=embeddings)
 
 
-ids = [f"doc_{i}" for i in range(len(all_chunks))]  # Generate unique IDs
+ids = [f"doc_{i}" for i in range(len(all_chunks))] 
 db.add_texts(all_chunks, ids=ids)
 
 
 
 #Retreival
-# Retrieve relevant documents based on the query
 
 # Retrieve relevant documents based on the query
 retriever = db.as_retriever(
@@ -80,20 +68,10 @@ retriever = db.as_retriever(
 )
 
 
-# Here’s how you can use the retriever to search based on a query:
-#query = "Latest advancements in AI"
-#results = retriever.get_relevant_documents(query)
-
-# Print the retrieved documents
-#for i, result in enumerate(results, 1):
-#    print(f"\nResult {i}:\n{result.page_content}")
-
-
-
 # Create a ChatOpenAI model
 from langchain_openai import ChatOpenAI
 
-llm = ChatOpenAI(model="gpt-4o", api_key = "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")
+llm = ChatOpenAI(model="gpt-4o", api_key = "Your_API_Key")
 
 
 query = "what is happening between israel"
@@ -111,7 +89,6 @@ combined_input = (
 )
 
 
-
 # Define the messages for the model
 from langchain_core.messages import HumanMessage, SystemMessage
 
@@ -122,14 +99,11 @@ messages = [
 
 
 
-
 # Invoke the model with the combined input
 result = llm.invoke(messages)
 
 # Display the full result and content only
 print("\n--- Generated Response ---")
-# print("Full result:")
-# print(result)
 print("Content only:")
 print(result.content)
 
