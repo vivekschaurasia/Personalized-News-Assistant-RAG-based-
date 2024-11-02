@@ -16,7 +16,7 @@ The Personalized News Assistant is an AI-driven application that leverages Retri
 
 ## Technology Stack
 * Language: Python
-* APIs: NewsAPI, newspaper3k, Open AI
+* APIs: Google NEWS, Open AI
 * NLP: Transformers, LangChain, Summarization Models
 * RAG: Retrieval-Augmented Generation framework
 * Environment Management: dotenv for API key management
