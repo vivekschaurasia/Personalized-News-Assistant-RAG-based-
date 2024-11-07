@@ -19,6 +19,6 @@ The Personalized News Assistant is an AI-driven application that leverages Retri
 * NLP: Transformers, LangChain, Summarization Models
 * RAG: Retrieval-Augmented Generation framework
 * Environment Management: dotenv for API key management
-* Version Control: Git
+* Version Control: Git, Github
 
 #Remove and put your own api keys
