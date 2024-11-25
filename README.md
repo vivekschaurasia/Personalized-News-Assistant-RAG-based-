@@ -22,3 +22,8 @@ The Personalized News Assistant is an AI-driven application that leverages Retri
 * Version Control: Git, Github
 
 #Remove and put your own api keys
+
+
+https://www.linkedin.com/in/vivek-santosh-chaurasia-567b15197/
+https://github.com/vivekschaurasia
+https://medium.com/@vivekschaurasia
