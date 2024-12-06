@@ -1,6 +1,6 @@
 # Personalized News Assistant (RAG-based)
 
-# Add Blog and edit the code soon
+# Blog
 https://medium.com/@vivekschaurasia/a-rag-model-for-summarizing-news-with-langchain-and-openai-301faefae7ef
 
 ## Overview
