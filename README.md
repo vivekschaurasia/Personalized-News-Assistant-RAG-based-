@@ -10,7 +10,7 @@ The Personalized News Assistant is an AI-driven application that leverages Retri
 1. Real-Time News Retrieval: Retrieves and processes 100+ real-time news articles per query using Google News api.
 2. NLP Summarization: Applies state-of-the-art NLP models to summarize articles with 85% accuracy, ensuring the user gets concise and relevant information.
 4. Dynamic Query Adaptation: The system adapts dynamically to user queries, ensuring that the most relevant and u  p-to-date content is provided.
-5. API Security: Environment variables are used to manage API keys and secure the system.
+5. API Security: Environment variables are used to manage API keys and secure the system. 
 
 
 ## Technology Stack
