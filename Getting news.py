@@ -1,8 +1,5 @@
 #Getting the 100 News with Google News library
 from GoogleNews import GoogleNews
-
-
-from GoogleNews import GoogleNews
 import pandas as pd
 
 user_request = input(str("Give me a topic: " ))
