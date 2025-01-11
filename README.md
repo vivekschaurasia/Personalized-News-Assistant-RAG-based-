@@ -13,10 +13,10 @@ The Personalized News Assistant is an AI-driven application that leverages Retri
 5. API Security: Environment variables are used to manage API keys and secure the system. 
 
 
-## Technology Stack
+## Technology Stack  
 * Language: Python
 * APIs: Google NEWS, Open AI
-* NLP: Transformers, LangChain, Summarization Models
+* NLP: Transformers, LangChain, Summarization Models, NLTK
 * RAG: Retrieval-Augmented Generation framework
 * Environment Management: dotenv for API key management
 * Version Control: Git, Github
